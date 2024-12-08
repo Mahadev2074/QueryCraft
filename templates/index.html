@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Generator</title>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+        label, select, textarea {
+            margin-bottom: 8px;
+        }
+        input, select, textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            width: 100%;
+            font-size: 1rem;
+        }
+        button {
+            margin-top: 10px;
+            margin: 10px;;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        h1 {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Test Generator</h1>
+        <form method="post">
+            {{ form.hidden_tag() }}
+            <label for="itext">Input Text:</label>
+            {{ form.itext(cols="40", rows="10") }}
+            <label for="test_type">Select Test Type:</label>
+            {{ form.test_type() }}
+            <label for="noq">Number of Questions:</label>
+            {{ form.noq() }}
+            {{ form.submit() }}
+        </form>
+    </div>
+</body>
+</html>
